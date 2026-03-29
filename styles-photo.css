@@ -1,0 +1,227 @@
+/* styles-photo.css */
+
+:root {
+    --primary-red: #C52A2E;
+    --dark-red: #A82226;
+    --text-dark: #2C2C2C;
+    --text-medium: #4A4A4A;
+    --bg-gradient-start: #E8E8E8;
+    --bg-gradient-end: #D0D0D0;
+    --circle-border: #C8E6E6;
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    --bg-white: #FFFFFF;
+    --bg-light: #F8F8F8; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background-image: url(fondo-login-tablet.jpg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 255, 255, 0.03) 2px,
+        rgba(255, 255, 255, 0.03) 4px
+    );
+    pointer-events: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    text-align: center;
+    width: 100%;
+    padding: 40px;
+}
+
+.title {
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.instructions {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.photo-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 4px solid var(--circle-border);
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 
+        0 0 0 12px rgba(200, 230, 230, 0.3),
+        0 0 0 24px rgba(200, 230, 230, 0.2),
+        0 0 0 36px rgba(200, 230, 230, 0.1),
+        0 8px 24px var(--shadow-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.photo-circle:active {
+    transform: scale(0.98);
+}
+
+.avatar {
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.btn-continue {
+    width: 100%;
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--bg-white);
+    background-color: var(--primary-red);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+    box-shadow: 0 2px 6px rgba(227, 30, 36, 0.2);
+}
+
+.btn-continue:hover {
+    background-color: var(--dark-red);
+    box-shadow: 0 4px 10px rgba(227, 30, 36, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-continue:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(227, 30, 36, 0.2);
+}
+
+/* Animación de pulso para el círculo */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 0 12px rgba(200, 230, 230, 0.3),
+            0 0 0 24px rgba(200, 230, 230, 0.2),
+            0 0 0 36px rgba(200, 230, 230, 0.1),
+            0 8px 24px var(--shadow-color);
+    }
+    50% {
+        box-shadow: 
+            0 0 0 14px rgba(200, 230, 230, 0.35),
+            0 0 0 28px rgba(200, 230, 230, 0.25),
+            0 0 0 42px rgba(200, 230, 230, 0.15),
+            0 10px 28px var(--shadow-color);
+    }
+}
+
+.photo-circle.active {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 32px;
+    }
+    
+    .instructions {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    
+    .photo-circle {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .btn-continue {
+        font-size: 18px;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 20px;
+    }
+    
+    .title {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    
+    .instructions {
+        font-size: 14px;
+        margin-bottom: 35px;
+    }
+    
+    .instructions br {
+        display: none;
+    }
+    
+    .photo-circle {
+        width: 200px;
+        height: 200px;
+        box-shadow: 
+            0 0 0 10px rgba(200, 230, 230, 0.3),
+            0 0 0 20px rgba(200, 230, 230, 0.2),
+            0 0 0 30px rgba(200, 230, 230, 0.1),
+            0 6px 20px var(--shadow-color);
+    }
+    
+    .btn-continue {
+        font-size: 17px;
+        padding: 15px;
+    }
+}
