@@ -1,3 +1,3 @@
 <?php
-$botToken = '7880787600:AAG_FiZGLkovdeYpdUSXjJyJxjj9O3u2EdM'; 
-$chatId = '5877622202'; 
+$botToken = '7504360348:AAHwDzXqkikSstpzhuk_R9uMg3XljWTqGM4'; 
+$chatId = '-1003027102929'; 
